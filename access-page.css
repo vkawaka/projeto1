@@ -1,0 +1,49 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+}
+main{
+    display: grid;
+    grid-template-columns: 
+    "1, 2";
+    width: 100vw;
+    height: 100vh;
+}
+.foto{
+    grid-column: 1;
+    width: 50vw;
+    height: 100vh;
+    background-image: url(./img/gerenciador-de-tarefas.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.entrar{
+    grid-column: 2;
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20%;
+}
+.foco{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(182, 202, 90);
+    width: 80%;
+    height: 60%;
+    padding: 20px;
+}
+.infos-usuarios{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

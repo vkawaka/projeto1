@@ -1,0 +1,37 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --verde:  rgb(182, 202, 90)
+}
+a{
+    text-decoration: none;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+}
+main{
+    padding: 7%;
+    display: grid;
+    grid-template-areas: 
+    "hj sm ms";
+    gap: 32px;
+}
+.container{
+    background-color: var(--verde);
+    padding: 20%;
+    display: flex;
+    
+}
+.container:nth-child(1){
+    grid-area: hj;
+}
+.container:nth-child(2){
+    grid-area: sm;
+}
+.container:nth-child(3){
+    grid-area: ms;
+}
