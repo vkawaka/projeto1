@@ -4,7 +4,8 @@
     box-sizing: border-box;
 }
 :root{
-    --verde:  rgb(182, 202, 90)
+    --verde:  rgb(182, 202, 90);
+    --branco: rgb(235, 236, 226);
 }
 a{
     text-decoration: none;
@@ -24,7 +25,27 @@ main{
     background-color: var(--verde);
     padding: 20%;
     display: flex;
-    
+    border-radius: 24px;
+    display: grid;
+    grid-template-areas: 
+    "topp"
+    "infos";
+}
+h2{
+    color: var(--branco);
+    grid-area: topp;
+}
+.tarefas{
+    grid-area: infos;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.tar{
+    background-color: var(--branco);
+    width: 100%;
+    padding-left: 12px;
+    height: 40%;
 }
 .container:nth-child(1){
     grid-area: hj;
