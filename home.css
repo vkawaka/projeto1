@@ -3,10 +3,6 @@
     margin: 0;
     box-sizing: border-box;
 }
-:root{
-    --verde:  rgb(182, 202, 90);
-    --branco: rgb(235, 236, 226);
-}
 a{
     text-decoration: none;
 }

@@ -19,7 +19,6 @@ picture{
     background-image: url(./img/gerenciador-de-tarefas.jpg);
     background-position: center;
     background-size: cover;
-    /* padding: 32px; */
 }
 main{
     display: flex;
@@ -50,11 +49,11 @@ main{
     gap: 10px;
 }
 .i label{
-    color: #C4C4C4;
+    color: var(--cinza);
 }
 .i input{
     border: none;
-    border-bottom: 1px solid #C4C4C4;
+    border-bottom: 1px solid var(--cinza);
     font-size: 16px;
 }
 input:focus{
@@ -64,7 +63,7 @@ button{
     width: 300px;
     height: 54px;
     border: none;
-    background-color: var(--verde-claro);
+    background-color: var(--verde);
     color: var(--branco);
     border-radius: 12px;
 }
