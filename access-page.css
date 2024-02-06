@@ -32,6 +32,12 @@ main{
     align-items: center;
     padding: 20%;
 }
+
+.entrar h2{
+
+    font-family: 'Roboto', sans-serif;
+}
+
 .foco{
     display: flex;
     flex-direction: column;
@@ -41,9 +47,47 @@ main{
     width: 80%;
     height: 60%;
     padding: 20px;
+    border-radius: 5px;
+    
 }
 .infos-usuarios{
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+.emailLogin{
+     border-radius: 5px;
+     height: 30px;
+     border: none;
+    
+}
+
+.senhaLogin{
+
+    border-radius: 5px;
+    height: 30px;
+    border: none;
+    margin-top: 30px;
+}
+
+.entrarLogin{
+
+    border: none;
+    height: 40px;
+    padding: 15px 30px;
+    border-radius: 2px;
+    background: rgba(0, 0, 0, 0.4);
+    
+    
+}
+
+.entrarLogin a{
+    text-decoration: none;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+}
+
+.pe a{
+    font-family: 'Roboto', sans-serif;
 }
