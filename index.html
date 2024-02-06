@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/gerenciador-de-tarefas.jpg">
     <link rel="stylesheet" href="./access-page.css">
     <link rel="stylesheet" href="./root.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,6 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,100&display=swap" rel="stylesheet">
     <title>Login</title>
 </head>
 <body>
@@ -22,14 +26,14 @@
                 <div class="infos-usuarios">
                     <div class="email">
                         <span class="material-symbols-outlined">mail</span>
-                        <input type="email" placeholder="Insira seu e-mail" aria-placeholder="Insira seu e-mail" name="email" id="email" required>
+                        <input class="emailLogin" type="email" placeholder="Insira seu e-mail" aria-placeholder="Insira seu e-mail" name="email" id="email" required>
                     </div>
                     <div class="senha">
                         <span class="material-symbols-outlined">lock</span>
-                        <input type="password" placeholder="Insira sua senha" aria-placeholder="Insira sua senha" name="senha" id="senha" required>
+                        <input class="senhaLogin" type="password" placeholder="Insira sua senha" aria-placeholder="Insira sua senha" name="senha" id="senha" required>
                     </div>
                 </div>
-                <button id="entrar">
+                <button class="entrarLogin" id="entrar">
                     <a href="./home.html">Entrar</a>
                 </button>
                 <a class="reset-senha" href="#">Esqueci a senha</a>    
