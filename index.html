@@ -14,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,100&display=swap" rel="stylesheet">
+    <script src="./login.js" defer></script>
     <title>Login</title>
 </head>
 <body>
@@ -33,8 +34,8 @@
                         <input class="senhaLogin" type="password" placeholder="Insira sua senha" aria-placeholder="Insira sua senha" name="senha" id="senha" required>
                     </div>
                 </div>
-                <button class="entrarLogin" id="entrar">
-                    <a href="./home.html">Entrar</a>
+                <button class="entrarLogin" id="entrar" onclick="validarLogin()">
+                    Entrar
                 </button>
                 <a class="reset-senha" href="#">Esqueci a senha</a>    
             </div>
