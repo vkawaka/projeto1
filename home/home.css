@@ -23,6 +23,7 @@ main{
 }
 .container{
     background-color: var(--verde);
+    max-height: 500px;
     border-radius: 15px;
     display: grid;
     grid-template-areas: 
@@ -33,11 +34,14 @@ main{
     display: flex;
     border-radius: 24px;
     display: grid;
-    grid-template-areas: 
-    "topp"
-    "infos";
+    gap: 16px;
     grid-area: tarefas;
+    max-height: 500px;
+    overflow-y: scroll;
 }
+.tarefas-container::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+  }
 .botao{
     grid-area: botao;
     place-self: end center;
@@ -56,21 +60,11 @@ button a{
     color: var(--verde-escuro);
     font-size: 16px;
 }
-h2{
-    color: var(--branco);
-    grid-area: topp;
-}
-.tarefas{
-    grid-area: infos;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
 .tar{
     background-color: var(--branco);
     width: 100%;
     padding-left: 12px;
-    height: 60px;
+    min-height: 60px;
     display: flex;
     border-radius: 10px;
     flex-direction: column;

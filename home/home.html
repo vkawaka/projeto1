@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../root.css">
     <link rel="stylesheet" href="./home.css">
+    <script src="./home.js" defer></script>
     <title>Home</title>
 </head>
 <body>
@@ -13,26 +14,13 @@
         <h1>Bem vindo(a)</h1>
     </header>
     <main>
-        <div class="container">
+        <div class="container" id="container-h">
             <div class="botao">
                 <button>
-                    <a href="./adicionartarefa.html">Adicionar nova tarefa</a>
+                    <a href="../add tarefa/adicionartarefa.html">Adicionar nova tarefa</a>
                 </button>
             </div>
-            <div class="tarefas-container">
-                <div class="tarefas">
-                    <div class="tar">
-                        <p class="titulo">titulo teste</p>
-                        <p class="descricao">?</p>
-                        20/02/24
-                    </div>
-                    <div class="tar">
-                        <p class="titulo">titulo teste</p>
-                        <p class="descricao">?</p>
-                        20/02/24
-                    </div>
-                </div>
-            </div>
+            <div class="tarefas-container" id="tarefas-container"></div>
         </div>
     </main>
 </body>
