@@ -12,8 +12,11 @@ async function criarCardTL(){
 
         tarefa.innerHTML = `
         <div class="tar">
-            <p class="titulo">${element.descrição}</p>
-            <p class="data">${element.dataConclusão}</p>
+           <div class="first"> 
+           <p class="titulo">${element.descrição}</p>
+           <p class="data">${element.dataConclusão}</p>
+           </div>
+           <button class="trash"><img src="./8664938_trash_can_delete_remove_icon.png" alt=""></button>
         </div>
         `
         containerTarefas.appendChild(tarefa)

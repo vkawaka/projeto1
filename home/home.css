@@ -47,7 +47,7 @@ main{
     place-self: end center;
     padding-bottom: 32px;
 }
-button{
+.button{
     border-color: var(--verde-escuro);
     border-width: 2px;
     width: 180px;
@@ -55,7 +55,7 @@ button{
     border-radius: 10px;
     background-color: var(--branco);
 }
-button a{
+.button a{
     text-decoration: none;
     color: var(--verde-escuro);
     font-size: 16px;
@@ -67,6 +67,17 @@ button a{
     min-height: 60px;
     display: flex;
     border-radius: 10px;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
+    gap: 200px;
+}
+.first{
+    width: 300px;
+}
+.trash{
+    width: 60px;
+    max-height: 60px;
+}
+.trash img{
+    width: 20px;
 }
