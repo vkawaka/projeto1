@@ -4,37 +4,43 @@
       "id": 1,
       "nome": "João da Silva",
       "email": "joao@silva.com",
-      "senha": "joao"
+      "senha": "joao",
+      "premium": true
     },
     {
       "id": 2,
       "nome": "Maria Salvagni",
       "email": "maria@salvagni.com",
-      "senha": "maria"
+      "senha": "maria",
+      "premium": false
     },
     {
       "id": 3,
       "nome": "Gabriel Pereira",
       "email": "gabriel@pereira.com",
-      "senha": "gabriel"
+      "senha": "gabriel",
+      "premium": true
     },
     {
       "nome": "choso",
       "email": "choso@gmail.com",
       "senha": "choso",
-      "id": 4
+      "id": 4,
+      "premium": false
     },
     {
       "nome": "choso",
-      "email": "choso@gmail.com",
-      "senha": "choso",
-      "id": 5
+      "email": "choso2@gmail.com",
+      "senha": "choso9",
+      "id": 5,
+      "premium": true
     },
     {
       "nome": "soobin",
       "email": "soobinlindao@gmail.com",
       "senha": "04032019",
-      "id": 6
+      "id": 6,
+      "premium": true
     }
   ],
   "tarefas": [
@@ -63,14 +69,8 @@
       "idUsuario": 3
     },
     {
-      "descrição": "teste",
-      "dataConclusão": "2024-02-23",
-      "idUsuario": null,
-      "id": 6
-    },
-    {
-      "descrição": "teste",
-      "dataConclusão": "2024-02-23",
+      "descrição": "lol",
+      "dataConclusão": "2024-02-29",
       "idUsuario": "6",
       "id": 7
     },
@@ -79,6 +79,20 @@
       "dataConclusão": "2024-02-23",
       "idUsuario": "6",
       "id": 8
+    },
+    {
+      "descrição": "teste 2",
+      "dataConclusão": "2024-02-29",
+      "idUsuario": "5",
+      "id": 9
+    }
+  ],
+  "comentarios":[
+    {
+     "descrição": "wow",
+     "idUsuario": 6,
+     "idTarefa": 8,
+     "id": 1
     }
   ]
 }

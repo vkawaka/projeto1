@@ -1,8 +1,7 @@
 'use strict'
 
-let idU = localStorage.getItem('id')
 
-async function criarCardTL(id){
+async function criarCardTL(){
     const chores = await fetch('http://localhost:5080/tarefas')
     const listChores = await chores.json()
 
@@ -10,8 +9,8 @@ async function criarCardTL(id){
     const containerTarefas = document.getElementById('tarefas-container')
 
     try {
-        listChores.forEach( tarefa => {
-            if(id == tarefa.idUsuario){
+        listChores.forEach( element => {
+
                 const tarefa = document.createElement('div')
     
             tarefa.innerHTML = `
@@ -34,7 +33,6 @@ async function criarCardTL(id){
             lapis.addEventListener('click', function (){
                 editarTarefa(element.id)
             })
-            }
         })
     
         container.appendChild(containerTarefas)
@@ -95,4 +93,4 @@ const editarTarefa = async (tarefa) => {
     })
 
 }
-criarCardTL(idU)
+criarCardTL()
