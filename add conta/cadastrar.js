@@ -14,10 +14,12 @@ function cadastrar(){
             const novoUser = {
                 nome: nome,
                 email: email,
-                senha: senha
+                senha: senha,
+                premium: false
             }
     
             enviar(novoUser)
+            window.location.href = '../login/index.html'
         }catch(error){
             alert('Erro ao acessar a API :P')
             console.error(error)

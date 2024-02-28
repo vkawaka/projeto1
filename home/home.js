@@ -12,27 +12,28 @@ async function criarCardTL(){
         listChores.forEach( element => {
 
                 const tarefa = document.createElement('div')
-    
+                
             tarefa.innerHTML = `
             <div class="tar">
                <div class="first"> 
                <p class="titulo">${element.descrição}</p>
                <p class="data">${element.dataConclusão}</p>
                </div>
-               <button class="trash"><img src="../img/pencil.png" alt="Lixeira" id="pencil${element.id}""></button>
-               <button class="trash"><img src="./trashCan.png" alt="Lixeira" id="trashCan${element.id}""></button>
+               <button class="trash"><img src="../img/coment.png" alt="Lixeira" id="coment${element.id}""></button>
+               <button class="trash"><img src="../img/heartEmpty.png" alt="Lixeira" id="heartEmpty${element.id}""></button>
             </div>
             `
+           
             containerTarefas.appendChild(tarefa)
             
-            const lixeira = document.getElementById('trashCan' + element.id)
-            lixeira.addEventListener('click', function (){
-                excluirTarefa(element.id)
-            })
-            const lapis = document.getElementById('pencil' + element.id)
-            lapis.addEventListener('click', function (){
-                editarTarefa(element.id)
-            })
+            // const lixeira = document.getElementById('trashCan' + element.id)
+            // lixeira.addEventListener('click', function (){
+            //     excluirTarefa(element.id)
+            // })
+            // const lapis = document.getElementById('pencil' + element.id)
+            // lapis.addEventListener('click', function (){
+            //     editarTarefa(element.id)
+            // })
         })
     
         container.appendChild(containerTarefas)

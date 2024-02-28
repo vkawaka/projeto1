@@ -41,6 +41,20 @@
       "senha": "04032019",
       "id": 6,
       "premium": true
+    },
+    {
+      "nome": "Yeonjun",
+      "email": "yawnnzwnn@hotmail.com",
+      "senha": "13091999",
+      "premium": false,
+      "id": 7
+    },
+    {
+      "nome": "Beomgyu",
+      "email": "beom@gmail.com",
+      "senha": "13032001",
+      "premium": false,
+      "id": 8
     }
   ],
   "tarefas": [
@@ -69,12 +83,6 @@
       "idUsuario": 3
     },
     {
-      "descrição": "lol",
-      "dataConclusão": "2024-02-29",
-      "idUsuario": "6",
-      "id": 7
-    },
-    {
       "descrição": "TXT cb in April",
       "dataConclusão": "2024-02-23",
       "idUsuario": "6",
@@ -85,14 +93,20 @@
       "dataConclusão": "2024-02-29",
       "idUsuario": "5",
       "id": 9
+    },
+    {
+      "descrição": "teste do teste",
+      "dataConclusão": "2024-03-07",
+      "idUsuario": "6",
+      "id": 10
     }
   ],
-  "comentarios":[
+  "comentarios": [
     {
-     "descrição": "wow",
-     "idUsuario": 6,
-     "idTarefa": 8,
-     "id": 1
+      "descrição": "wow",
+      "idUsuario": 6,
+      "idTarefa": 8,
+      "id": 1
     }
   ]
 }
