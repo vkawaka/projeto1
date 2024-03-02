@@ -25,8 +25,8 @@ async function validarLogin() {
                     localStorage.setItem('user',user.nome)
                     localStorage.setItem('id', user.id)
                     localStorage.setItem('email', user.email)
+                    localStorage.setItem('premium', user.premium)
                     
-    
                     alert('User logado com sucesso!!')
                     window.location.href = "../home/home.html"
                 }

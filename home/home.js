@@ -1,5 +1,18 @@
 'use strict'
 
+function alertT(){
+    let coiso = localStorage.getItem('premium')
+    alert(coiso)
+}
+
+alertT()
+
+if(localStorage.getItem('premium')){
+    criarCardTLPremium()
+}else{
+    criarCardTL()
+}
+
 
 async function criarCardTL(){
     const chores = await fetch('http://localhost:5080/tarefas')
@@ -42,6 +55,52 @@ async function criarCardTL(){
     }
 
 }
+async function criarCardTLPremium(){
+    const chores = await fetch('http://localhost:5080/tarefas')
+    const listChores = await chores.json()
+
+    const container = document.getElementById('container-h')
+    const containerTarefas = document.getElementById('tarefas-container')
+
+    try {
+        listChores.forEach( element => {
+
+                const tarefa = document.createElement('div')
+                
+            tarefa.innerHTML = `
+            <div class="tar">
+               <div class="first"> 
+               <p class="titulo">${element.descrição}</p>
+               <p class="data">${element.dataConclusão}</p>
+               </div>
+               <div class="botoes">
+               <button class="trash"><img src="../img/coment.png" alt="Lixeira" id="coment${element.id}""></button>
+               <button class="trash"><img src="../img/heartEmpty.png" alt="Lixeira" id="heartEmpty${element.id}""></button>
+               <button class="trash"><img src="../img/pencil.png" alt="Lixeira" id="pencilt${element.id}""></button>
+               <button class="trash"><img src="./trashCan.png" alt="Lixeira" id="trashCan${element.id}""></button>
+               </div>
+            </div>
+            `
+           
+            containerTarefas.appendChild(tarefa)
+            
+            const lixeira = document.getElementById('trashCan' + element.id)
+            lixeira.addEventListener('click', function (){
+                excluirTarefa(element.id)
+            })
+            const lapis = document.getElementById('pencil' + element.id)
+            lapis.addEventListener('click', function (){
+                editarTarefa(element.id)
+            })
+        })
+    
+        container.appendChild(containerTarefas)
+    } catch (error) {
+        
+    }
+
+}
+
 
 async function excluirTarefa(idTarefa){
     const url = `http://localhost:5080/tarefas/${idTarefa}`
@@ -94,4 +153,3 @@ const editarTarefa = async (tarefa) => {
     })
 
 }
-criarCardTL()
