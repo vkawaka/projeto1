@@ -1,106 +1,93 @@
 'use strict'
 
-function alertT(){
-    let coiso = localStorage.getItem('premium')
-    alert(coiso)
-}
+const idUsuario = localStorage.getItem('idUser')
 
-alertT()
+async function criarCard(){
+    //pegar usuario do back pelo id
+    const pegarTeste = `http://localhost:5080/usuario/${idUsuario}`
+    const teste = await fetch(pegarTeste)
+    const user = await teste.json()
 
-if(localStorage.getItem('premium')){
-    criarCardTLPremium()
-}else{
-    criarCardTL()
-}
+    console.log(user)
 
+    //pegar as tarefas (todas)
+    const url = 'http://localhost:5080/tarefas'
+    const tasks = await fetch(url)
+    const listTasks = await tasks.json()
 
-async function criarCardTL(){
-    const chores = await fetch('http://localhost:5080/tarefas')
-    const listChores = await chores.json()
+    const tarContainer = document.getElementById('tarefas-container')
 
-    const container = document.getElementById('container-h')
-    const containerTarefas = document.getElementById('tarefas-container')
+    listTasks.forEach(tarefa => {
+        if(user.id == tarefa.idUsuario){
+            const card = document.createElement('div')
+            card.className = 'tar'
+            const titulo = document.createElement('p')
+            titulo.className = 'titulo'
+            const data = document.createElement('p')
+            data.className = 'data'
+            const botoes = document.createElement('div')
+            botoes.className = 'botoes'
+            const comentB = document.createElement('button')
+            comentB.className = 'trash'
+            const comentI = document.createElement('img')
+            comentI.src = '../img/coment.png'
+            const pencilB = document.createElement('button')
+            pencilB.className = 'trash'
+            const pencilI = document.createElement('img')
+            pencilI.src = '../img/pencil.png'
+            const trashB = document.createElement('button')
+            trashB.className = 'trash'
+            const trashI = document.createElement('img')
+            trashI.src = './trashCan.png'
 
-    try {
-        listChores.forEach( element => {
+            comentB.appendChild(comentI)
+            pencilB.appendChild(pencilI)
+            trashB.appendChild(trashI)
 
-                const tarefa = document.createElement('div')
-                
-            tarefa.innerHTML = `
-            <div class="tar">
-               <div class="first"> 
-               <p class="titulo">${element.descrição}</p>
-               <p class="data">${element.dataConclusão}</p>
-               </div>
-               <button class="trash"><img src="../img/coment.png" alt="Lixeira" id="coment${element.id}""></button>
-               <button class="trash"><img src="../img/heartEmpty.png" alt="Lixeira" id="heartEmpty${element.id}""></button>
-            </div>
-            `
-           
-            containerTarefas.appendChild(tarefa)
+            pencilB.onclick = editarTarefa
+
+            trashB.onclick = excluirTarefa
+
+            titulo.textContent = `${tarefa.descrição}`
+            data.textContent = `${tarefa.dataConclusão}`
             
-            // const lixeira = document.getElementById('trashCan' + element.id)
-            // lixeira.addEventListener('click', function (){
-            //     excluirTarefa(element.id)
-            // })
-            // const lapis = document.getElementById('pencil' + element.id)
-            // lapis.addEventListener('click', function (){
-            //     editarTarefa(element.id)
-            // })
-        })
-    
-        container.appendChild(containerTarefas)
-    } catch (error) {
-        
-    }
 
-}
-async function criarCardTLPremium(){
-    const chores = await fetch('http://localhost:5080/tarefas')
-    const listChores = await chores.json()
+            botoes.append(comentB, pencilB, trashB)
+            card.append(titulo, data, botoes)
 
-    const container = document.getElementById('container-h')
-    const containerTarefas = document.getElementById('tarefas-container')
+            tarContainer.appendChild(card)
+        }else{
+            const card = document.createElement('div')
+            card.className = 'tar'
+            const titulo = document.createElement('p')
+            titulo.className = 'titulo'
+            const data = document.createElement('p')
+            data.className = 'data'
+            const botoes = document.createElement('div')
+            botoes.className = 'botoes'
+            const comentB = document.createElement('button')
+            comentB.className = 'trash'
+            const comentI = document.createElement('img')
+            comentI.src = '../img/coment.png'
 
-    try {
-        listChores.forEach( element => {
-
-                const tarefa = document.createElement('div')
-                
-            tarefa.innerHTML = `
-            <div class="tar">
-               <div class="first"> 
-               <p class="titulo">${element.descrição}</p>
-               <p class="data">${element.dataConclusão}</p>
-               </div>
-               <div class="botoes">
-               <button class="trash"><img src="../img/coment.png" alt="Lixeira" id="coment${element.id}""></button>
-               <button class="trash"><img src="../img/heartEmpty.png" alt="Lixeira" id="heartEmpty${element.id}""></button>
-               <button class="trash"><img src="../img/pencil.png" alt="Lixeira" id="pencilt${element.id}""></button>
-               <button class="trash"><img src="./trashCan.png" alt="Lixeira" id="trashCan${element.id}""></button>
-               </div>
-            </div>
-            `
+            comentB.appendChild(comentI)
            
-            containerTarefas.appendChild(tarefa)
-            
-            const lixeira = document.getElementById('trashCan' + element.id)
-            lixeira.addEventListener('click', function (){
-                excluirTarefa(element.id)
-            })
-            const lapis = document.getElementById('pencil' + element.id)
-            lapis.addEventListener('click', function (){
-                editarTarefa(element.id)
-            })
-        })
-    
-        container.appendChild(containerTarefas)
-    } catch (error) {
-        
-    }
+            comentB.onclick = excluirTarefa
 
+            titulo.textContent = `${tarefa.descrição}`
+            data.textContent = `${tarefa.dataConclusão}`
+            
+
+            botoes.append(comentB)
+            card.append(titulo, data, botoes)
+
+            tarContainer.appendChild(card)
+        }
+    })
+    
 }
 
+criarCard()
 
 async function excluirTarefa(idTarefa){
     const url = `http://localhost:5080/tarefas/${idTarefa}`

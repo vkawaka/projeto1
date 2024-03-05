@@ -1,6 +1,7 @@
 .tar button{
     border: none;
     background-color: var(--branco);
+    height: 20px;
 }
 body{
     height: 100vh;
@@ -40,14 +41,14 @@ main{
 .tarefas-container{
     padding: 20%;
     display: flex;
+    flex-direction: column;
     border-radius: 24px;
-    display: grid;
     gap: 16px;
     height: 100%;
     overflow-y: scroll;
 }
 .tarefas-container::-webkit-scrollbar {
-    display: none; /* for Chrome, Safari, and Opera */
+    display: none;
   }
 .botao{
     position: fixed;
@@ -70,19 +71,23 @@ main{
     background-color: var(--branco);
     width: 100%;
     padding-left: 12px;
-    min-height: 60px;
+    min-height: 80px;
     display: flex;
     border-radius: 10px;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
-    gap: 20px;
+    gap: 2px;
 }
-.first{
-    width: 300px;
+.botoes{
+    display: flex;
+    width: 60%;
+    justify-content: space-around;
+    align-self: center;
 }
+
 .trash{
-    width: 60px;
-    max-height: 60px;
+    max-width: 40px;
+    max-height: 40px;
 }
 .trash img{
     width: 20px;

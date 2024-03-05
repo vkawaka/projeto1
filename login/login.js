@@ -22,9 +22,9 @@ async function validarLogin() {
             listUsers.forEach((user) => {
                 if(email === user.email && senha === user.senha){
 
-                    localStorage.setItem('user',user.nome)
-                    localStorage.setItem('id', user.id)
-                    localStorage.setItem('email', user.email)
+                    localStorage.setItem('nomeUser',user.nome)
+                    localStorage.setItem('idUser', user.id)
+                    localStorage.setItem('emailUser', user.email)
                     localStorage.setItem('premium', user.premium)
                     
                     alert('User logado com sucesso!!')

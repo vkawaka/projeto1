@@ -1,7 +1,6 @@
 'use strict'
-const message = require('../root.js')
 
-function adicionar(){
+function addTarefa(){
     const titulo = document.getElementById('titulo').value
     const data = document.getElementById('data').value
 
@@ -14,7 +13,7 @@ function adicionar(){
         const novaTarefa = {
             descrição: titulo,
             dataConclusão: data,
-            idUsuario: localStorage.getItem('id')
+            idUsuario: localStorage.getItem('idUser')
         }
 
         enviar(novaTarefa)
